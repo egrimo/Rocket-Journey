@@ -48,18 +48,17 @@ public class GameBehaviour : MonoBehaviour
     {
         var frameRotationSpeed = rcsThrust * Time.deltaTime;
         _rigidbody.freezeRotation = true;
-        
-        
+
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            
             transform.Rotate(Vector3.forward * frameRotationSpeed);
-
-        } else if (Input.GetKey(KeyCode.RightArrow))
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(Vector3.back * frameRotationSpeed);
         }
-        
+
         _rigidbody.freezeRotation = false;
     }
 
@@ -70,8 +69,8 @@ public class GameBehaviour : MonoBehaviour
             if (!_audioSource.isPlaying)
             {
                 _audioSource.Play();
-            } 
-           
+            }
+
             _rigidbody.AddRelativeForce(Vector3.up * mainThrust);
         }
         else
